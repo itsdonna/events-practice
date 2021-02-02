@@ -3,7 +3,8 @@
 const form = document.querySelector("#comment-form")
 const newComment = document.querySelector("#new-comment")
 const container = document.querySelector("#comments-container")
-const dogBtn = document.querySelector("#dog-btn") 
+const dogBtn = document.querySelector("#dog-btn")
+const catBtn = document.querySelector("#cat-btn") 
 // chooses first one div = div, # = id
 // get elementById = singular , getElementsByClassName = expects an argument, return plural
 
@@ -24,6 +25,18 @@ function captureSubmit(event){
 
 
 dogBtn.addEventListener('click', fetchSubmit)
+
+catBtn.addEventListener('click', factsSubmit)
+
+function factsSubmit(){
+
+    console.log("orange")
+    return fetch('https://cat-fact.herokuapp.com/facts')
+    .then(o => o.json())
+    .then(o => {
+        debugger
+    })
+}
 
 function fetchSubmit(){
 
